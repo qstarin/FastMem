@@ -138,6 +138,61 @@ namespace FastMem.Tests.x64.Windows
 
 
         [Test]
+        public void MoveChars_HL_2_1()
+        {
+            var length = 2;
+            var srcOffset = 1;
+            var dstOffset = 0;
+            var a = _chars.Take(length + srcOffset + dstOffset).ToArray();
+            FastMem.Chars.Copy(a, a, length, dstOffset, srcOffset);
+            Assert.AreEqual(_chars.Skip(srcOffset).Take(length).ToArray(), a.Skip(dstOffset).Take(length).ToArray());
+        }
+
+        [Test]
+        public void MoveChars_HL_2_6_5()
+        {
+            var length = 2;
+            var srcOffset = 6;
+            var dstOffset = 5;
+            var a = _chars.Take(length + srcOffset + dstOffset).ToArray();
+            FastMem.Chars.Copy(a, a, length, dstOffset, srcOffset);
+            Assert.AreEqual(_chars.Skip(srcOffset).Take(length).ToArray(), a.Skip(dstOffset).Take(length).ToArray());
+        }
+
+        [Test]
+        public void MoveChars_HL_20_1()
+        {
+            var length = 20;
+            var srcOffset = 1;
+            var dstOffset = 0;
+            var a = _chars.Take(length + srcOffset + dstOffset).ToArray();
+            FastMem.Chars.Copy(a, a, length, dstOffset, srcOffset);
+            Assert.AreEqual(_chars.Skip(srcOffset).Take(length).ToArray(), a.Skip(dstOffset).Take(length).ToArray());
+        }
+
+        [Test]
+        public void MoveChars_HL_20_6_5()
+        {
+            var length = 20;
+            var srcOffset = 6;
+            var dstOffset = 5;
+            var a = _chars.Take(length + srcOffset + dstOffset).ToArray();
+            FastMem.Chars.Copy(a, a, length, dstOffset, srcOffset);
+            Assert.AreEqual(_chars.Skip(srcOffset).Take(length).ToArray(), a.Skip(dstOffset).Take(length).ToArray());
+        }
+
+        [Test]
+        public void MoveChars_HL_20_5_6() // can't copy from low to high area of same memory, it overwrites as it goes
+        {
+            var length = 20;
+            var srcOffset = 5;
+            var dstOffset = 6;
+            var a = _chars.Take(length + srcOffset + dstOffset).ToArray();
+            FastMem.Chars.Copy(a, a, length, dstOffset, srcOffset);
+            Assert.AreNotEqual(_chars.Skip(srcOffset).Take(length).ToArray(), a.Skip(dstOffset).Take(length).ToArray());
+        }
+
+        [Test]
         public void CopyChars_10()
         {
             var length = 10;
