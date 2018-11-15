@@ -11,19 +11,16 @@ using System;
 
 namespace FastMem
 {
-    static public partial class Copy
-    {
-		static public partial class Bytes
+	static public partial class Bytes
+	{
+		static public partial class Fixed
 		{
-			static public partial class Fixed
+			static internal void Switch(byte[] dst, byte[] src, int length, int dstOffset = 0, int srcOffset = 0)
 			{
-				static internal void Switch(byte[] dst, byte[] src, int length, int dstOffset = 0, int srcOffset = 0)
-				{
-					switch (length) {
+				switch (length) {
 <# for(var i = 1; i <= Max; i++) { #>
-						case <#= i #>: Copy<#= i #>(dst, src, dstOffset, srcOffset); return;
+					case <#= i #>: Copy<#= i #>(dst, src, dstOffset, srcOffset); return;
 <# } #>
-					}
 				}
 			}
 		}

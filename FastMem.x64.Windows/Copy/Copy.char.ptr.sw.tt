@@ -11,21 +11,18 @@ using System;
 
 namespace FastMem
 {
-    static public partial class Copy
-    {
-		static public partial class Chars
+	static public partial class Chars
+	{
+		static public partial class Fixed
 		{
-			static public partial class Fixed
-			{
-				internal const int MaxLength = <#= Max / 2 #>;
+			internal const int MaxLength = <#= Max / 2 #>;
 
-				static internal unsafe void Switch(char* dst, char* src, int length)
-				{
-					switch (length) {
+			static internal unsafe void Switch(char* dst, char* src, int length)
+			{
+				switch (length) {
 <# for(var i = 1; i <= Max / 2; i++) { #>
-						case <#= i #>: Copy<#= i #>(dst, src); return;
+					case <#= i #>: Copy<#= i #>(dst, src); return;
 <# } #>
-					}
 				}
 			}
 		}

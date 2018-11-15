@@ -18,7 +18,7 @@ namespace FastMem.Tests.x64.Windows
         {
             var length = 10;
             var a = new char[length];
-            FastMem.Copy.Chars.Copy(a, _chars, length);
+            FastMem.Chars.Copy(a, _chars, length);
             Assert.AreEqual(_chars.Take(length).ToArray(), a);
         }
 
@@ -28,7 +28,7 @@ namespace FastMem.Tests.x64.Windows
             var length = 10;
             var srcOffset = 10;
             var a = new char[length];
-            FastMem.Copy.Chars.Copy(a, _chars, length, 0, srcOffset);
+            FastMem.Chars.Copy(a, _chars, length, 0, srcOffset);
             Assert.AreEqual(_chars.Skip(srcOffset).Take(length).ToArray(), a);
         }
 
@@ -39,7 +39,7 @@ namespace FastMem.Tests.x64.Windows
             var srcOffset = 10;
             var dstOffset = 10;
             var a = new char[length + dstOffset];
-            FastMem.Copy.Chars.Copy(a, _chars, length, dstOffset, srcOffset);
+            FastMem.Chars.Copy(a, _chars, length, dstOffset, srcOffset);
             Assert.AreEqual(_chars.Skip(srcOffset).Take(length).ToArray(), a.Skip(dstOffset).ToArray());
         }
     }

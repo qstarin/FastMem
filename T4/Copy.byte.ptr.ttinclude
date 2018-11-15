@@ -4,12 +4,10 @@ using System.Text;
 
 namespace FastMem
 {
-    static public partial class Copy
-    {
-		static public partial class Bytes
+	static public partial class Bytes
+	{
+		static public partial class Fixed
 		{
-			static public partial class Fixed
-			{
 <# 
 	Start++;
 	Stop = Math.Min(Stop, Max);
@@ -19,13 +17,12 @@ namespace FastMem
 		if (Breaks.Any(b => i > b.Point && i % b.Step != 0)) continue;
 #>
 
-				static <#= CopyVisibility(i) #> unsafe void Copy<#= Reverse ? "Reverse" : "" #><#= i #>(byte* dst, byte* src)
-				{
-<#= CastFor(i, indent:5, reverse:Reverse) #>
-				}
+			static <#= CopyVisibility(i) #> unsafe void Copy<#= Reverse ? "Reverse" : "" #><#= i #>(byte* dst, byte* src)
+			{
+<#= CastFor(i, indent:4, reverse:Reverse) #>
+			}
 
 <# } #>
-			}
 		}
 	}
 }
