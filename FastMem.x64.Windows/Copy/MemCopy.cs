@@ -34,7 +34,7 @@ namespace FastMem
             if (length <= Fixed.MaxLength)
                 Fixed.Switch(dst, src, length);
             else
-                Windows.memcpy(dst, src, length << 1);
+                Windows.memcpy(dst, src, length);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -43,7 +43,7 @@ namespace FastMem
             if (length <= Fixed.MaxLength)
                 Fixed.Switch(dst, src, length, dstOffset, srcOffset);
             else
-                Windows.memcpy(dst, src, length << 1, dstOffset, srcOffset);
+                Windows.memcpy(dst, src, length, dstOffset, srcOffset);
         }
     }
 }
