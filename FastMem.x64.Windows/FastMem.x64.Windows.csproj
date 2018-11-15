@@ -50,46 +50,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Copy.char.ptr.sw.tt</DependentUpon>
     </Compile>
-    <Compile Update="Copy\Copy.rev.byte.arr.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Copy.rev.byte.arr.tt</DependentUpon>
-    </Compile>
-    <Compile Update="Copy\Copy.rev.byte.arr.sw.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Copy.rev.byte.arr.sw.tt</DependentUpon>
-    </Compile>
-    <Compile Update="Copy\Copy.rev.byte.ptr.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Copy.rev.byte.ptr.tt</DependentUpon>
-    </Compile>
-    <Compile Update="Copy\Copy.rev.byte.ptr.sw.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Copy.rev.byte.ptr.sw.tt</DependentUpon>
-    </Compile>
-    <Compile Update="Copy\Copy.rev.char.arr.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Copy.rev.char.arr.tt</DependentUpon>
-    </Compile>
-    <Compile Update="Copy\Copy.rev.char.arr.sw.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Copy.rev.char.arr.sw.tt</DependentUpon>
-    </Compile>
-    <Compile Update="Copy\Copy.rev.char.ptr.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Copy.rev.char.ptr.tt</DependentUpon>
-    </Compile>
-    <Compile Update="Copy\Copy.rev.char.ptr.sw.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Copy.rev.char.ptr.sw.tt</DependentUpon>
-    </Compile>
   </ItemGroup>
 
   <ItemGroup>
@@ -124,38 +84,6 @@
     <None Update="Copy\Copy.char.ptr.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Copy.char.ptr.cs</LastGenOutput>
-    </None>
-    <None Update="Copy\Copy.rev.byte.arr.sw.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>Copy.rev.byte.arr.sw.cs</LastGenOutput>
-    </None>
-    <None Update="Copy\Copy.rev.byte.arr.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>Copy.rev.byte.arr.cs</LastGenOutput>
-    </None>
-    <None Update="Copy\Copy.rev.byte.ptr.sw.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>Copy.rev.byte.ptr.sw.cs</LastGenOutput>
-    </None>
-    <None Update="Copy\Copy.rev.byte.ptr.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>Copy.rev.byte.ptr.cs</LastGenOutput>
-    </None>
-    <None Update="Copy\Copy.rev.char.arr.sw.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>Copy.rev.char.arr.sw.cs</LastGenOutput>
-    </None>
-    <None Update="Copy\Copy.rev.char.arr.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>Copy.rev.char.arr.cs</LastGenOutput>
-    </None>
-    <None Update="Copy\Copy.rev.char.ptr.sw.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>Copy.rev.char.ptr.sw.cs</LastGenOutput>
-    </None>
-    <None Update="Copy\Copy.rev.char.ptr.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>Copy.rev.char.ptr.cs</LastGenOutput>
     </None>
   </ItemGroup>
 

@@ -19,30 +19,12 @@ namespace FastMem
             }
 
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            static public unsafe void CopyReverse(byte* dst, byte* src, int length)
-            {
-                if (length <= Fixed.MaxLength)
-                    Fixed.SwitchReverse(dst, src, length);
-                else
-                    Windows.memmove(dst, src, length);
-            }
-
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             static public void Copy(byte[] dst, byte[] src, int length, int dstOffset = 0, int srcOffset = 0)
             {
                 if (length <= Fixed.MaxLength)
                     Fixed.Switch(dst, src, length, dstOffset, srcOffset);
                 else
                     Windows.memcpy(dst, src, length, dstOffset, srcOffset);
-            }
-
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            static public void CopyReverse(byte[] dst, byte[] src, int length, int dstOffset = 0, int srcOffset = 0)
-            {
-                if (length <= Fixed.MaxLength)
-                    Fixed.SwitchReverse(dst, src, length, dstOffset, srcOffset);
-                else
-                    Windows.memmove(dst, src, length, dstOffset, srcOffset);
             }
         }
 
@@ -58,30 +40,12 @@ namespace FastMem
             }
 
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            static public unsafe void CopyReverse(char* dst, char* src, int length)
-            {
-                if (length <= Fixed.MaxLength)
-                    Fixed.SwitchReverse(dst, src, length);
-                else
-                    Windows.memmove(dst, src, length << 1);
-            }
-
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             static public void Copy(char[] dst, char[] src, int length, int dstOffset = 0, int srcOffset = 0)
             {
                 if (length <= Fixed.MaxLength)
                     Fixed.Switch(dst, src, length, dstOffset, srcOffset);
                 else
                     Windows.memcpy(dst, src, length << 1, dstOffset, srcOffset);
-            }
-
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            static public void CopyReverse(char[] dst, char[] src, int length, int dstOffset = 0, int srcOffset = 0)
-            {
-                if (length <= Fixed.MaxLength)
-                    Fixed.SwitchReverse(dst, src, length, dstOffset, srcOffset);
-                else
-                    Windows.memmove(dst, src, length << 1, dstOffset, srcOffset);
             }
         }
     }
