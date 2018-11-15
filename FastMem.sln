@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2048
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FastMem.x64.Windows", "FastMem.x64.Windows\FastMem.x64.Windows.csproj", "{0BCF1FD9-3A94-4AB7-9353-FA1AC3523F61}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "T4", "T4", "{1131806F-C51C-41D3-826D-88658AF8C48E}"
+	ProjectSection(SolutionItems) = preProject
+		T4\CastHelpers.ttinclude = T4\CastHelpers.ttinclude
+		T4\Copy.byte.arr.ttinclude = T4\Copy.byte.arr.ttinclude
+		T4\Copy.byte.ptr.ttinclude = T4\Copy.byte.ptr.ttinclude
+		T4\Copy.char.arr.ttinclude = T4\Copy.char.arr.ttinclude
+		T4\Copy.char.ptr.ttinclude = T4\Copy.char.ptr.ttinclude
+		T4\CopyHelpers.ttinclude = T4\CopyHelpers.ttinclude
+		T4\x64.CastParams.ttinclude = T4\x64.CastParams.ttinclude
+		T4\x64.CopyParams.ttinclude = T4\x64.CopyParams.ttinclude
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FastMem.Tests.x64.Windows", "FastMem.Tests.x64.Windows\FastMem.Tests.x64.Windows.csproj", "{E35F0B17-A4BB-4BA8-BEB8-9C7CD48CEBB9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0BCF1FD9-3A94-4AB7-9353-FA1AC3523F61}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0BCF1FD9-3A94-4AB7-9353-FA1AC3523F61}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0BCF1FD9-3A94-4AB7-9353-FA1AC3523F61}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0BCF1FD9-3A94-4AB7-9353-FA1AC3523F61}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E35F0B17-A4BB-4BA8-BEB8-9C7CD48CEBB9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E35F0B17-A4BB-4BA8-BEB8-9C7CD48CEBB9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E35F0B17-A4BB-4BA8-BEB8-9C7CD48CEBB9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E35F0B17-A4BB-4BA8-BEB8-9C7CD48CEBB9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DCB67B49-11BA-4D2C-9EFC-4525E222EC4A}
+	EndGlobalSection
+EndGlobal

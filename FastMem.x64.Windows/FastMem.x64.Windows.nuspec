@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+    <metadata>
+        <id>FastMem.x64.Windows</id>
+        <title>FastMem.x64.Windows</title>
+        <version>0.0.4</version>
+        <authors>Quentin Starin</authors>
+        <owners>Quentin Starin</owners>
+        <description>Fast memory utilities specifically for Intel x64 on Windows</description>
+        <licenseUrl>http://opensource.org/licenses/MIT</licenseUrl>
+        <projectUrl>https://bitbucket.org/quentin-starin/fastmem/wiki/Home</projectUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <summary>Fast memory utilities specifically for Intel x64 on Windows</summary>
+    </metadata>
+    <files>
+        <file src="..\FastMem.x64.Windows\bin\Release\netstandard1.1\FastMem.x64.Windows.dll" target="lib\netstandard1.1" />
+    </files>
+</package>

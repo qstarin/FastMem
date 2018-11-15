@@ -1,0 +1,13 @@
+﻿<#@ template debug="false" hostspecific="false" language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ output extension=".cs" #>
+<#@ include file="..\..\T4\x64.CastParams.ttinclude" #>
+<#@ include file="..\..\T4\x64.CopyParams.ttinclude" #>
+<#
+	var Start = 0;
+	var Stop = Max;
+#>
+<#@ include file="..\..\T4\Copy.char.ptr.ttinclude" #>

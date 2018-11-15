@@ -1,0 +1,10 @@
+﻿<#@ include file="CastHelpers.ttinclude" #>
+<#+
+	CastType[] CastTypes = new CastType[] {
+		new CastType(16, "S16"),
+		new CastType(08, "S08"),
+		new CastType(04, "S04"),
+		new CastType(02, "S02"),
+		new CastType(01, "S01"),
+	};
+#>

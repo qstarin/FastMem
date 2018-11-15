@@ -1,0 +1,11 @@
+﻿<#+
+	public string CopyVisibility(int numberOfBytes)
+	{
+		if (PublicCopy.Contains(numberOfBytes)) return "public";
+		foreach (var p in PublicCopyPoints) {
+			if (numberOfBytes <= p.Point)
+				return p.Step > 0 && numberOfBytes % p.Step == 0 ? "public" : "internal";
+		}
+		return "internal";
+	}
+#>

@@ -1,0 +1,34 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace FastMem
+{
+    static public partial class Copy
+    {
+		static public partial class Chars
+		{
+			static public partial class Fixed
+			{
+<# 
+	Start++;
+	Stop = Math.Min(Stop, Max / 2);
+	var range = Stop > Start ? Stop - Start + 1 : 0;
+	foreach (var i in Enumerable.Range(Start, range).Concat(Extras)) 
+	{
+		if (Breaks.Any(b => i > b.Point && i % b.Step != 0)) continue;
+#>
+
+				static <#= CopyVisibility(i) #> unsafe void Copy<#= Reverse ? "Reverse" : "" #><#= i #>(char[] dst, char[] src, int dstOffset = 0, int srcOffset = 0)
+				{
+					fixed (char* pd = &dst[dstOffset])
+					fixed (char* ps = &src[srcOffset]) {
+<#= CastFor(i, "pd", "ps", 6, 2, reverse:Reverse) #>
+					}
+				}
+
+<# } #>
+			}
+		}
+	}
+}

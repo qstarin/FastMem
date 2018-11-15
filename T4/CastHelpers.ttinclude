@@ -1,0 +1,81 @@
+﻿<#+
+	public class CastType
+	{
+		public CastType(int size, string name) { Size=size; Name=name; }
+		public int Size {get;}
+		public string Name {get;}
+	}
+
+	public class CastInfo 
+	{
+		public CastInfo(int wholeCastCount, CastType wholeCastType, int partialCastCount, CastType partialCastType)
+		{ 
+			WholeCastCount=wholeCastCount; 
+			WholeCastType=wholeCastType; 
+			PartialCastCount=partialCastCount; 
+			PartialCastType=partialCastType;
+		}
+		public int WholeCastCount {get;}
+		public CastType WholeCastType {get;}
+		public int PartialCastCount {get;}
+		public CastType PartialCastType {get;}
+	}
+	
+
+	public CastInfo CastInfoFor(int numberOfBytes)
+	{
+		var castType = CastTypes.First(o => o.Size <= numberOfBytes);
+		var wholeCasts = numberOfBytes / castType.Size;
+		var partialCast = numberOfBytes % castType.Size;
+
+		var partialCastType = 
+			CastTypes.Where(o => o.Size >= partialCast)
+					 .Where(o => castType.Size < 8 || o.Size >= 8)
+					 .OrderBy(o => o.Size)
+					 .FirstOrDefault();
+		
+		return new CastInfo(wholeCasts, castType, partialCast, partialCastType);
+	}
+
+	public string CastFor(int numberOfBytes, string dst = "dst", string src = "src", int indent = 3, int size = 1, bool reverse = false)
+	{
+		var t = CastInfoFor(numberOfBytes * size);
+		var ct = t.WholeCastType;
+		var pct = t.PartialCastType;
+
+		var tab = new string(' ', 4 * indent);
+		var sb = new StringBuilder();
+
+		if (reverse) {
+			if (t.PartialCastCount > 0) {
+				sb.Append(tab);
+				sb.AppendLine($"*({pct.Name}*)({dst} + {(size * numberOfBytes - pct.Size) / size}) = *({pct.Name}*)({src} + {(size * numberOfBytes - pct.Size) / size});");
+			}
+
+			for (var i = t.WholeCastCount - 1; i > 0; i--) {
+				sb.Append(tab);
+				sb.AppendLine($"*({ct.Name}*)({dst} + {(i * ct.Size) / size}) = *({ct.Name}*)({src} + {(i * ct.Size) / size});");
+			}
+
+			sb.Append(tab);
+			sb.AppendLine($"*({ct.Name}*){dst} = *({ct.Name}*){src};");
+		}
+		else {
+			sb.Append(tab);
+			sb.AppendLine($"*({ct.Name}*){dst} = *({ct.Name}*){src};");
+
+			for (var i = 1; i < t.WholeCastCount; i++) {
+				sb.Append(tab);
+				sb.AppendLine($"*({ct.Name}*)({dst} + {(i * ct.Size) / size}) = *({ct.Name}*)({src} + {(i * ct.Size) / size});");
+			}
+
+			if (t.PartialCastCount > 0) {
+				sb.Append(tab);
+				sb.AppendLine($"*({pct.Name}*)({dst} + {(size * numberOfBytes - pct.Size) / size}) = *({pct.Name}*)({src} + {(size * numberOfBytes - pct.Size) / size});");
+			}
+		}
+		
+		sb.Length -= 2;
+		return sb.ToString();
+	}
+#>

@@ -1,0 +1,12 @@
+﻿<#@ include file="CopyHelpers.ttinclude" #>
+<#+
+	static int Max = 1024;
+	bool Reverse = false;
+	int[] Extras = new int[0];
+	int[] PublicCopy = new int[0];
+	(int Point, int Step)[] PublicCopyPoints = new (int Point, int Step)[] {
+		(Max, 1),
+	};
+
+	(int Point, int Step)[] Breaks = new (int Point, int Step)[0];
+#>
