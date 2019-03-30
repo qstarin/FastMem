@@ -3,7 +3,7 @@
     <metadata>
         <id>FastMem.x64.Windows</id>
         <title>FastMem.x64.Windows</title>
-        <version>0.0.9</version>
+        <version>0.0.10</version>
         <authors>Quentin Starin</authors>
         <owners>Quentin Starin</owners>
         <description>Fast memory utilities specifically for Intel x64 on Windows</description>
