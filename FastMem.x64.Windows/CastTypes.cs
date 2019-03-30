@@ -5,20 +5,20 @@ using System.Runtime.InteropServices;
 namespace FastMem
 {
     [StructLayout(LayoutKind.Sequential)]
-    internal struct S01
+    public struct S01
     {
         public byte B01;
     }
 
     [StructLayout(LayoutKind.Sequential)]
-    internal struct S02
+    public struct S02
     {
         public byte B01;
         public byte B02;
     }
 
     [StructLayout(LayoutKind.Sequential)]
-    internal struct S04
+    public struct S04
     {
         public byte B01;
         public byte B02;
@@ -27,7 +27,7 @@ namespace FastMem
     }
 
     [StructLayout(LayoutKind.Sequential)]
-    internal struct S08
+    public struct S08
     {
         public byte B01;
         public byte B02;
@@ -40,7 +40,7 @@ namespace FastMem
     }
 
     [StructLayout(LayoutKind.Sequential)]
-    internal struct S16
+    public struct S16
     {
         public byte B01;
         public byte B02;
