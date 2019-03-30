@@ -18,3 +18,4 @@ _ReSharper*\*
 *.config.json
 *.nupkg
 .vs
+FastMem.x64.Windows\Copy\Copy.*.cs
