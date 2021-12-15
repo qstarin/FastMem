@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28010.2048
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32002.261
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FastMem.x64.Windows", "FastMem.x64.Windows\FastMem.x64.Windows.csproj", "{0BCF1FD9-3A94-4AB7-9353-FA1AC3523F61}"
 EndProject
@@ -17,7 +17,14 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "T4", "T4", "{1131806F-C51C-
 		T4\x64.CopyParams.ttinclude = T4\x64.CopyParams.ttinclude
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FastMem.Tests.x64.Windows", "FastMem.Tests.x64.Windows\FastMem.Tests.x64.Windows.csproj", "{E35F0B17-A4BB-4BA8-BEB8-9C7CD48CEBB9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FastMem.Tests.x64.Windows", "FastMem.Tests.x64.Windows\FastMem.Tests.x64.Windows.csproj", "{E35F0B17-A4BB-4BA8-BEB8-9C7CD48CEBB9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{1B7CA817-6C53-42A7-8AF6-835DF5F1421C}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		LICENSE = LICENSE
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
